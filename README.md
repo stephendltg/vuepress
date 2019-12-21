@@ -37,7 +37,7 @@ npm run build or npm run dev to start a local server
 
 For more information, see [VuePress Docs](https://vuepress.vuejs.org)
 
-<form name="contact" netlify>
+<form name="contact" method="POST" data-netlify="true" >
   <p>
     <label>Name <input type="text" name="name" /></label>
   </p>
