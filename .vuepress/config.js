@@ -2,7 +2,7 @@ module.exports = {
     title: "VuePress Deploy",
     locales: {
         '/': {
-            lang: 'de-DE',
+            lang: 'fr-FR',
             title: 'VuePress Deploy',
             description: 'Vuepress with Netlify Deploy Button'
         }
