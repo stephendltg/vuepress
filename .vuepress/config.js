@@ -23,7 +23,14 @@ module.exports = {
     themeConfig: {
         docsDir: 'docs',
         repo: 'capriosa/vuepress-deploy',
-
+        serviceWorker: {
+          updatePopup: true // Boolean | Object, default to undefined.
+          // If set to true, the default text config will be: 
+          // updatePopup: { 
+          //    message: "New content is available.", 
+          //    buttonText: "Refresh" 
+          // }
+        },
         nav: [{
                 text: 'Start',
                 link: '/docs/',
