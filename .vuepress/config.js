@@ -43,7 +43,6 @@ module.exports = {
                 text: 'NetlifyCMS Config Help',
                 link: '/docs/netlifycms-configuration.html',
             }
-
         ]
 
     }
