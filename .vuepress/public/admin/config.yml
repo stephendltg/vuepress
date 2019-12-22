@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: capriosa/vuepress-deploy
+  repo: stephendltg/vuepress
   branch: master
 
 public_folder: ".vuepress/dist/"
