@@ -1,16 +1,16 @@
 module.exports = {
-    title: "VuePress Deploy",
+    title: "Him and Her",
     locales: {
         '/': {
             lang: 'fr-FR',
-            title: 'VuePress Deploy',
+            title: 'Him and Her',
             description: 'Vuepress with Netlify Deploy Button'
         }
     },
     head: [
         ['link', { rel: 'icon', href: `/logo.png` }],
         ['link', { rel: 'manifest', href: '/manifest.json' }],
-        ['link', { rel: 'canonical', href: 'https://vuepress-deploy.netlify.com' }],
+        ['link', { rel: 'canonical', href: 'https://himandher.netlify.com' }],
         ['meta', { name: 'theme-color', content: '#3eaf7c' }],
         ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
         ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
@@ -22,7 +22,7 @@ module.exports = {
     serviceWorker: true,
     themeConfig: {
         docsDir: 'docs',
-        repo: 'capriosa/vuepress-deploy',
+        repo: 'stephendltg/vuepress',
         serviceWorker: {
           updatePopup: true // Boolean | Object, default to undefined.
           // If set to true, the default text config will be: 

@@ -17,20 +17,22 @@ features:
 
 # oups VuePress test merde
 
+<Text/>
+
 This is a Starter template for a [VuePress](https://vuepress.vuejs.org) with a Progressive Web App (PWA) out of the box.  
 And it integrates the NetlifyCMS with VuePress.
 
 ## One-click Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/capriosa/vuepress-deploy)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/stephendltg/vuepress)
 
 ## Local Development
 
 To try it out locally, clone this repo and generate a static site.
 
 ```bash{3}
-git clone https://github.com/capriosa/vuepress-deploy
-cd vuepress-deploy
+git clone https://github.com/stephendltg/vuepress
+cd vuepress
 npm install
 npm run build or npm run dev to start a local server
 ```
