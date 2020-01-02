@@ -247,7 +247,7 @@ export default {
      * load the camera passed as index!
      */
     loadCamera(device) {
-      let constraints = { video: { deviceId: { exact: device } }, facingMode: { exact: 'environment' } };
+      let constraints = { video: { deviceId: { exact: device } }, facingMode: 'environment' };
 
       if (this.resolution) {
         constraints.video.height = this.resolution.height;
