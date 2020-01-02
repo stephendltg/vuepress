@@ -46,10 +46,9 @@
 </template>
 
 <script>
-import webCam from "./webcam";
+import WebCam from "./webcam";
 
 export default {
-    name: "viewcam",
     components: {
         "vue-web-cam": WebCam
     },
