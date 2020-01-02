@@ -46,12 +46,12 @@
 </template>
 
 <script>
-import webcam from "./webcam.vue";
+import webCam from "./webcam";
 
 export default {
     name: "App",
     components: {
-        "webcam": WebCam
+        "vue-web-cam": WebCam
     },
     data() {
         return {
