@@ -49,7 +49,7 @@
 import webCam from "./webcam";
 
 export default {
-    name: "App",
+    name: "viewcam",
     components: {
         "vue-web-cam": WebCam
     },
