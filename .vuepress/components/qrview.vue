@@ -2,45 +2,26 @@
   <div>
     <p class="decode-result">Last result: <b>{{ result }}</b></p>
 
-    <qrcode-drop-zone @decode="onDecode" @init="logErrors">
-      <qrcode-stream @decode="onDecode" @init="onInit" />
-    </qrcode-drop-zone>
-
-    <qrcode-capture v-if="noStreamApiSupport" @decode="onDecode" />
+    <qrcode-capture @decode="onDecode" />
   </div>
 </template>
 
 <script>
-import { QrcodeStream, QrcodeDropZone, QrcodeCapture } from 'vue-qrcode-reader'
+import { QrcodeCapture } from 'vue-qrcode-reader'
 
 export default {
 
-  components: { QrcodeStream, QrcodeDropZone, QrcodeCapture },
+  components: { QrcodeCapture },
 
   data () {
     return {
-      result: '',
-      noStreamApiSupport: false
+      result: ''
     }
   },
 
   methods: {
     onDecode (result) {
       this.result = result
-    },
-
-    logErrors (promise) {
-      promise.catch(console.error)
-    },
-
-    async onInit (promise) {
-      try {
-        await promise
-      } catch (error) {
-        if (error.name === 'StreamApiNotSupportedError') {
-          this.noStreamApiSupport = true
-        }
-      }
     }
   }
 }
