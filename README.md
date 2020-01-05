@@ -18,6 +18,7 @@ features:
 
 # oups VuePress test merde
 
+<qrview/>
 
 <viewcam/>
 

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { QrcodeCapture } from 'vue-qrcode-reader'
+import { QrcodeCapture } from 'vue-qrcode-reader';
 
 export default {
 
