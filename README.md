@@ -18,7 +18,6 @@ features:
 
 # oups VuePress test merde
 
-<Text></Text>
 
 <viewcam/>
 
