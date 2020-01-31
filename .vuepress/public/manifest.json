@@ -13,8 +13,8 @@
         }
     ],
     "start_url": "/index.html",
-    "SDdisplay": "browser",
-    "display": "standalone",
+    "display": "browser",
+    "SDdisplay": "standalone",
     "background_color": "#fff",
     "theme_color": "#4527a0"
 }
