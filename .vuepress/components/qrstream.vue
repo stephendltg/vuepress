@@ -22,7 +22,7 @@ import { QrcodeStream } from 'vue-qrcode-reader'
 
 export default {
 
-  components: { QrcodeStream },
+  components: { "qrcode-stream": QrcodeStream },
 
   data () {
     const options = [
