@@ -1,47 +1,101 @@
+
 <template>
   <div>
-    <p class="decode-result">Last result: <b>{{ result }}</b></p>
+    <p>
+      Track function:
+      <select v-model="selected">
+        <option v-for="option in options" :value="option">
+          {{ option.text }}
+        </option>
+      </select>
+    </p>
 
-    <qrcode-drop-zone @decode="onDecode" @init="logErrors">
-      <qrcode-stream @decode="onDecode" @init="onInit" />
-    </qrcode-drop-zone>
+    <p class="decode-result">
+      Last result: <b>{{ result }}</b>
+    </p>
 
-    <qrcode-capture v-if="noStreamApiSupport" @decode="onDecode" />
+    <qrcode-stream :key="_uid" :track="selected.value" @decode="onDecode" @init="logErrors" />
   </div>
 </template>
 
 <script>
-import { QrcodeStream, QrcodeDropZone, QrcodeCapture } from 'vue-qrcode-reader'
+import { QrcodeStream } from 'vue-qrcode-reader'
 
 export default {
 
-  components: { QrcodeStream, QrcodeDropZone, QrcodeCapture },
+  components: { QrcodeStream },
 
   data () {
-    return {
-      result: '',
-      noStreamApiSupport: false
-    }
+    const options = [
+      { text: "None", value: false },
+      { text: "Red square (default)", value: true },
+      { text: "Green text", value: this.paintGreenText },
+      { text: "Blue dots", value: this.paintBlueDots },
+    ]
+
+    const selected = options[2]
+
+    return { selected, options, result: null }
   },
 
   methods: {
+    paintBlueDots (location, ctx) {
+      const {
+        topLeftFinderPattern,
+        topRightFinderPattern,
+        bottomLeftFinderPattern
+      } = location
+
+      const pointArray = [
+        topLeftFinderPattern,
+        topRightFinderPattern,
+        bottomLeftFinderPattern
+      ]
+
+      ctx.fillStyle = '#007bff'
+
+      pointArray.forEach(({ x, y }) => {
+        ctx.fillRect(x - 5, y - 5, 10, 10)
+      })
+    },
+
+    paintGreenText (location, ctx) {
+      const {
+        topLeftCorner,
+        topRightCorner,
+        bottomLeftCorner,
+        bottomRightCorner
+      } = location
+
+      const pointArray = [
+        topLeftCorner,
+        topRightCorner,
+        bottomLeftCorner,
+        bottomRightCorner
+      ]
+
+      const centerX = pointArray.reduce((sum, { x }) => x + sum, 0) / 4
+      const centerY = pointArray.reduce((sum, { y }) => y + sum, 0) / 4
+
+      ctx.font = "bold 24px sans-serif"
+      ctx.textAlign = "center"
+
+      ctx.lineWidth = 3
+      ctx.strokeStyle = '#35495e'
+      ctx.strokeText(this.result, centerX, centerY)
+
+      ctx.fillStyle = '#5cb984'
+      ctx.fillText(this.result, centerX, centerY)
+    },
+
     onDecode (result) {
       this.result = result
     },
 
     logErrors (promise) {
       promise.catch(console.error)
-    },
-
-    async onInit (promise) {
-      try {
-        await promise
-      } catch (error) {
-        if (error.name === 'StreamApiNotSupportedError') {
-          this.noStreamApiSupport = true
-        }
-      }
     }
   }
+
 }
 </script>
