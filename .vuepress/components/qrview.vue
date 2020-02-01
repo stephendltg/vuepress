@@ -11,7 +11,7 @@ import { QrcodeCapture } from 'vue-qrcode-reader';
 
 export default {
 
-  components: { QrcodeCapture },
+  components: { "qrcode-capture": QrcodeCapture },
 
   data () {
     return {
