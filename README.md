@@ -20,8 +20,6 @@ features:
 
 <viewcam/>
 
-<qrstream/>
-
 This is a Starter template for a [VuePress](https://vuepress.vuejs.org) with a Progressive Web App (PWA) out of the box.  
 And it integrates the NetlifyCMS with VuePress.
 
