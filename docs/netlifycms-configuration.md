@@ -4,4 +4,3 @@ title: qrcode
 # qrcode
 
 
-<qrstream/>
